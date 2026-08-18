@@ -1,0 +1,92 @@
+# British Columbia pre-fire burn-severity prediction (CanLaBS v2 continuous dNBR).
+# Leakage rule: predictors are pre-fire Landsat + Hansen tree cover + static
+# terrain only. No post-fire band, index or difference may enter the model.
+project:
+  name: bc_prefire_burn_severity
+  region: British Columbia
+  resolution_m: 30
+  target: canlabs_v2_continuous_dnbr
+  random_seed: 42
+
+events:
+  selected:
+    - 2014_2151
+    - 2014_612
+    - 2016_174
+    - 2017_1816
+    - 2017_849
+    - 2018_1274
+    - 2018_1726
+    - 2019_105
+    - 2020_293
+    - 2021_1183
+    - 2021_1501
+    - 2022_607
+  minimum_required: 8
+  recommended_count: 12
+
+gates:
+  minimum_area_ha: 1000
+  minimum_canlabs_coverage: 0.90
+  minimum_valid_prefire_fraction: 0.50
+  minimum_forest_pixels: 5000
+  tree_cover_threshold: 30
+  tree_cover_sensitivity: [20, 30, 40]
+
+landsat:
+  collection: landsat-c2-l2
+  maximum_scenes: 3
+  composite: pixel_median
+  bands: [red, nir08, swir16, swir22]
+  indices: [NDVI, NBR, NDMI]
+  index_valid_range: [-1, 1]
+
+hansen:
+  version: GFC-2023-v1.11
+  variables: [treecover2000, lossyear, forest_persistence_years_since_2000]
+  exclude_loss_before_fire: true
+
+terrain:
+  collection: cop-dem-glo-30
+  variables: [elevation, slope, aspect]
+  event_cache: true
+  asset_timeout_seconds: 180
+
+sampling:
+  block_size_m: 300
+  target_pixels_per_fire: [10000, 20000]
+  stratify_target_dnbr: true
+
+validation:
+  outer: leave_one_fire_out
+  hyperparameter_policy: fixed_a_priori
+  primary_aggregation: event_macro
+
+models:
+  - naive_training_mean
+  - linear_regression
+  - random_forest_regressor
+
+random_forest:
+  n_estimators: 160
+  max_depth: 20
+  min_samples_leaf: 10
+  max_features: 0.7
+
+forbidden_features:
+  - post_fire_reflectance
+  - post_NDVI
+  - post_NBR
+  - post_NDMI
+  - dNBR_feature
+  - dNDVI
+  - dNDMI
+
+out_of_scope:
+  - ERA5_Land
+  - TerraClimate
+  - FWI
+  - national_ecoregions
+  - cross_province_transfer
+  - XGBoost
+  - deep_learning

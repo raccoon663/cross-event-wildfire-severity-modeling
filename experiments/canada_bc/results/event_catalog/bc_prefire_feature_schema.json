@@ -1,0 +1,41 @@
+{
+  "target": "CanLaBS v2 continuous dNBR (source integer divided by 1000)",
+  "predictor_timing": "pre-fire Landsat plus pre-fire/static ancillary data only",
+  "tree_cover_threshold": 30,
+  "block_size_m": 300,
+  "rows": 821214,
+  "events": 12,
+  "columns": {
+    "fire_id": "object",
+    "year": "int64",
+    "province": "object",
+    "pixel_id": "object",
+    "row": "int32",
+    "col": "int32",
+    "x": "float64",
+    "y": "float64",
+    "spatial_block_id": "object",
+    "pre_red": "float32",
+    "pre_nir": "float32",
+    "pre_swir1": "float32",
+    "pre_swir2": "float32",
+    "pre_NDVI": "float32",
+    "pre_NBR": "float32",
+    "pre_NDMI": "float32",
+    "tree_cover2000": "float32",
+    "forest_persistence_years_since_2000": "int16",
+    "elevation": "float32",
+    "slope": "float32",
+    "aspect": "float32",
+    "aspect_sin": "float32",
+    "aspect_cos": "float32",
+    "target_dNBR": "float32"
+  },
+  "forbidden_predictors_absent": [
+    "post_NDVI",
+    "post_NBR",
+    "post_NDMI",
+    "dNDVI",
+    "dNDMI"
+  ]
+}

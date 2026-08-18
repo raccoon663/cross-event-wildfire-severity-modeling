@@ -1,0 +1,312 @@
+{
+  "evaluation": "Camp-only training; Carr complete event external test; no Carr tuning",
+  "resolution_m": 30,
+  "train_fire_id": "CA3982012144020181108",
+  "test_fire_id": "CA4065012263020180723",
+  "carr_event_properties": {
+    "OBJECTID": 24299,
+    "FIRE_ID": "CA4065012263020180723",
+    "FIRE_NAME": "CARR",
+    "YEAR": 2018,
+    "STARTMONTH": 7,
+    "STARTDAY": 23,
+    "FIRE_TYPE": "Wildfire",
+    "ACRES": 233526,
+    "IRWINID": "6315DD52-1B00-4DAF-B57B-3B1E6E0453D1",
+    "MAP_ID": 10014639,
+    "MAP_PROG": "MTBS",
+    "ASMNT_TYPE": "Extended",
+    "IG_DATE": 20180723,
+    "PRE_ID": "804503220180710",
+    "POST_ID": "804503220190729",
+    "PERIM_ID": null,
+    "DNBR_OFFST": -16,
+    "DNBR_STDDV": 36,
+    "NODATA_THRESHOLD": -970,
+    "GREENNESS_THRESHOLD": -150,
+    "LOW_THRESHOLD": 50,
+    "MODERATE_THRESHOLD": 259,
+    "HIGH_THRESHOLD": 500,
+    "COMMENTS": null,
+    "LATITUDE": 40.70091995,
+    "LONGITUDE": -122.58727254,
+    "Shape__Area": 0.10077556801707033,
+    "Shape__Length": 2.8861845710886183
+  },
+  "pre_item_id": "LC08_L2SP_045032_20180710_02_T1",
+  "post_item_id": "LC08_L2SP_045032_20190729_02_T1",
+  "n_camp_train_sampled": 100000,
+  "n_carr_test_pixels": 1032984,
+  "carr_class_counts": {
+    "1": 43245,
+    "2": 269891,
+    "3": 362777,
+    "4": 357071
+  },
+  "camp_trained_rf": {
+    "macro_f1": 0.7975541004447442,
+    "balanced_accuracy": 0.795826874208626,
+    "high_severity_recall": 0.8091023914011499,
+    "per_class": {
+      "1": {
+        "precision": 0.7428849948881333,
+        "recall": 0.7225112729795352,
+        "f1": 0.7325565037981806,
+        "support": 43245
+      },
+      "2": {
+        "precision": 0.777819215727869,
+        "recall": 0.8423178246032658,
+        "f1": 0.8087846563801894,
+        "support": 269891
+      },
+      "3": {
+        "precision": 0.7472007613929011,
+        "recall": 0.8093760078505529,
+        "f1": 0.7770466337012283,
+        "support": 362777
+      },
+      "4": {
+        "precision": 0.9450979750727861,
+        "recall": 0.8091023914011499,
+        "f1": 0.8718286078993785,
+        "support": 357071
+      }
+    },
+    "confusion_matrix": [
+      [
+        31245,
+        11830,
+        169,
+        1
+      ],
+      [
+        10677,
+        227334,
+        31597,
+        283
+      ],
+      [
+        128,
+        52527,
+        293623,
+        16499
+      ],
+      [
+        9,
+        580,
+        67575,
+        288907
+      ]
+    ]
+  },
+  "frozen_camp_dnbr_thresholds": [
+    0.06,
+    0.301,
+    0.57
+  ],
+  "frozen_camp_dnbr": {
+    "macro_f1": 0.7893060955201631,
+    "balanced_accuracy": 0.7753534448710153,
+    "high_severity_recall": 0.7651139409249141,
+    "per_class": {
+      "1": {
+        "precision": 0.8162709901563405,
+        "recall": 0.651959764134582,
+        "f1": 0.724921257311821,
+        "support": 43245
+      },
+      "2": {
+        "precision": 0.7621837584339158,
+        "recall": 0.874360389935196,
+        "f1": 0.8144275104227063,
+        "support": 269891
+      },
+      "3": {
+        "precision": 0.7261220788142525,
+        "recall": 0.8099796844893695,
+        "f1": 0.765761938888527,
+        "support": 362777
+      },
+      "4": {
+        "precision": 0.9614369470505846,
+        "recall": 0.7651139409249141,
+        "f1": 0.8521136754575979,
+        "support": 357071
+      }
+    },
+    "confusion_matrix": [
+      [
+        28194,
+        14906,
+        145,
+        0
+      ],
+      [
+        6246,
+        235982,
+        27456,
+        207
+      ],
+      [
+        94,
+        58090,
+        293842,
+        10751
+      ],
+      [
+        6,
+        635,
+        83230,
+        273200
+      ]
+    ]
+  },
+  "carr_official_thresholds_reference_only": [
+    0.05,
+    0.259,
+    0.5
+  ],
+  "carr_calibrated_dnbr_reference_only": {
+    "macro_f1": 0.7934540713685605,
+    "balanced_accuracy": 0.7680625997104887,
+    "high_severity_recall": 0.9223207709391129,
+    "per_class": {
+      "1": {
+        "precision": 0.8605150214592274,
+        "recall": 0.5841831425598335,
+        "f1": 0.695921656129912,
+        "support": 43245
+      },
+      "2": {
+        "precision": 0.8322388829354368,
+        "recall": 0.7654201140460408,
+        "f1": 0.7974322203843563,
+        "support": 269891
+      },
+      "3": {
+        "precision": 0.770723445824518,
+        "recall": 0.8003263712969676,
+        "f1": 0.7852460080488122,
+        "support": 362777
+      },
+      "4": {
+        "precision": 0.869659592334688,
+        "recall": 0.9223207709391129,
+        "f1": 0.8952164009111617,
+        "support": 357071
+      }
+    },
+    "confusion_matrix": [
+      [
+        25263,
+        17683,
+        291,
+        8
+      ],
+      [
+        4014,
+        206580,
+        58653,
+        644
+      ],
+      [
+        76,
+        23654,
+        290340,
+        48707
+      ],
+      [
+        5,
+        305,
+        27427,
+        329334
+      ]
+    ]
+  },
+  "camp_oof_macro_f1": 0.8089341596976443,
+  "rf_performance_retention": 0.9859320327662345,
+  "feature_distribution_shift": [
+    {
+      "feature": "pre_ndvi",
+      "camp_mean": 0.6253747940063477,
+      "carr_mean": 0.7224518656730652,
+      "standardized_mean_difference": 0.5378543624551582
+    },
+    {
+      "feature": "pre_nbr",
+      "camp_mean": 0.48474931716918945,
+      "carr_mean": 0.5423133969306946,
+      "standardized_mean_difference": 0.2975504192888504
+    },
+    {
+      "feature": "pre_ndmi",
+      "camp_mean": 0.21756978332996368,
+      "carr_mean": 0.27316930890083313,
+      "standardized_mean_difference": 0.32502334666156885
+    },
+    {
+      "feature": "post_ndvi",
+      "camp_mean": 0.44883909821510315,
+      "carr_mean": 0.4056994616985321,
+      "standardized_mean_difference": -0.25948877113553465
+    },
+    {
+      "feature": "post_nbr",
+      "camp_mean": 0.23633933067321777,
+      "carr_mean": 0.1174813061952591,
+      "standardized_mean_difference": -0.5708505517071409
+    },
+    {
+      "feature": "post_ndmi",
+      "camp_mean": 0.03418731689453125,
+      "carr_mean": -0.046480413526296616,
+      "standardized_mean_difference": -0.5234583785530437
+    },
+    {
+      "feature": "d_ndvi",
+      "camp_mean": 0.17653551697731018,
+      "carr_mean": 0.31675246357917786,
+      "standardized_mean_difference": 0.9184160181477001
+    },
+    {
+      "feature": "dnbr",
+      "camp_mean": 0.24840997159481049,
+      "carr_mean": 0.4248320758342743,
+      "standardized_mean_difference": 0.779728907213215
+    },
+    {
+      "feature": "d_ndmi",
+      "camp_mean": 0.18338251113891602,
+      "carr_mean": 0.31964975595474243,
+      "standardized_mean_difference": 0.7765098704376372
+    },
+    {
+      "feature": "post_red",
+      "camp_mean": 0.08544705808162689,
+      "carr_mean": 0.08201088011264801,
+      "standardized_mean_difference": -0.09436058894446518
+    },
+    {
+      "feature": "post_nir",
+      "camp_mean": 0.21627894043922424,
+      "carr_mean": 0.18904586136341095,
+      "standardized_mean_difference": -0.609423434702509
+    },
+    {
+      "feature": "post_swir1",
+      "camp_mean": 0.20636387169361115,
+      "carr_mean": 0.21232019364833832,
+      "standardized_mean_difference": 0.09458301619980099
+    },
+    {
+      "feature": "post_swir2",
+      "camp_mean": 0.13807126879692078,
+      "carr_mean": 0.15715569257736206,
+      "standardized_mean_difference": 0.3218872173299822
+    }
+  ],
+  "runtime_seconds": 237.36922540000523,
+  "rss_bytes_observed": 947953664,
+  "interpretation": "Agreement with MTBS thematic labels, not field validation. Carr official thresholds are descriptive only and not part of the external model comparison."
+}

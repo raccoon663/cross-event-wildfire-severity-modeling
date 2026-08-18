@@ -1,0 +1,7 @@
+{
+  "events": 12,
+  "pixel_metrics": "all valid pixels in each held-out fire",
+  "block_metrics": "means within preassigned 300 m blocks",
+  "top25_metrics": "event-relative observed and predicted upper quartiles; evaluation only",
+  "confidence_intervals": "95% percentile bootstrap over events, 10000 repetitions"
+}

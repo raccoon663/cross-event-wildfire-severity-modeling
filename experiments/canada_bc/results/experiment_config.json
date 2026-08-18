@@ -1,0 +1,46 @@
+{
+  "validation": "leave-one-fire-out",
+  "test_scoring": "all valid held-out pixels",
+  "training_sampling": "equal pixels per fire, proportional within-event dNBR deciles",
+  "pixels_per_training_fire": 15000,
+  "seed": 42,
+  "features": {
+    "spectral": [
+      "pre_red",
+      "pre_nir",
+      "pre_swir1",
+      "pre_swir2",
+      "pre_NDVI",
+      "pre_NBR",
+      "pre_NDMI"
+    ],
+    "structure_terrain": [
+      "tree_cover2000",
+      "elevation",
+      "slope",
+      "aspect_sin",
+      "aspect_cos"
+    ],
+    "full": [
+      "pre_red",
+      "pre_nir",
+      "pre_swir1",
+      "pre_swir2",
+      "pre_NDVI",
+      "pre_NBR",
+      "pre_NDMI",
+      "tree_cover2000",
+      "elevation",
+      "slope",
+      "aspect_sin",
+      "aspect_cos"
+    ]
+  },
+  "rf": {
+    "n_estimators": 160,
+    "max_depth": 20,
+    "min_samples_leaf": 10,
+    "max_features": 0.7
+  },
+  "note": "RF hyperparameters were fixed before inspecting any held-out-fire result."
+}

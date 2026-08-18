@@ -1,0 +1,42 @@
+# --- Remote-sensing rasters: never commit raw imagery ---
+*.tif
+*.tiff
+*.vrt
+*.img
+*.jp2
+*.hdf
+*.nc
+
+# --- Derived / intermediate tables ---
+*.parquet
+*.feather
+
+# --- Serialized models and caches ---
+*.joblib
+*.pkl
+*.h5
+*.onnx
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- Local secrets / credentials ---
+.env
+.env.*
+*.pem
+*.key
+*_token*.json
+
+# --- Experiment scratch (kept out of the repo; results are small CSVs/JSON) ---
+experiments/*/results/data/
+experiments/canada_bc/events/
+*.log
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

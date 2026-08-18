@@ -1,0 +1,21 @@
+# Camp Fire within-event resolution ablation at 90 m (aggregation of the 30 m grid).
+experiment: camp_resolution_ablation
+resolution_m: 90
+target_crs: "EPSG:32610"
+fire_id: CA3982012144020181108
+fire_name: CAMP
+fire_year: 2018
+pre_item_id: LC08_L2SP_044032_20180719_02_T1
+post_item_id: LC08_L2SP_044032_20190722_02_T1
+mtbs_assessment_type: Extended
+
+spatial_block_m: 5000
+n_splits: 5
+random_seed: 2026
+
+rf:
+  n_estimators: 350
+  min_samples_leaf: 5
+  max_features: sqrt
+  class_weight: balanced_subsample
+  max_train_pixels_per_class: 25000
