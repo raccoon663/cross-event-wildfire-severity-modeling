@@ -21,9 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import argparse
 import json
-from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 from src.validation.bootstrap import bootstrap_event_mean

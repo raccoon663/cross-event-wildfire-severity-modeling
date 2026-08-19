@@ -18,6 +18,7 @@ truncated raster is never mistaken for a cached success.
 
 from __future__ import annotations
 
+import subprocess
 import tempfile
 import time
 from pathlib import Path
@@ -33,8 +34,6 @@ __all__ = ["warp_asset_to_grid", "warp_to_reference"]
 
 
 def _run(command: list[str], timeout: int | None) -> tuple[int, str]:
-    import subprocess
-
     process = subprocess.run(
         command, capture_output=True, text=True, encoding="utf-8",
         errors="replace", timeout=timeout,
@@ -120,8 +119,6 @@ def warp_to_reference(
 
     last_error = ""
     for attempt in range(attempts):
-        import subprocess
-
         try:
             code, message = _run(command, timeout)
             if code == 0:

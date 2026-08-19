@@ -28,12 +28,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import argparse
 import json
-from pathlib import Path
 
 import matplotlib.pyplot as plt
 
 from src.config import PROJECT_ROOT
-from src.data.usa_dataset import run_camp_resolution_ablation, run_camp_to_carr_transfer
+from src.data.usa_dataset import run_camp_resolution_ablation
 
 RESULTS = PROJECT_ROOT / "experiments" / "usa_camp_carr" / "results"
 

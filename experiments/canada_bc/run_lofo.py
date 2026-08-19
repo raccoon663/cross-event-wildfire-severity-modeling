@@ -24,7 +24,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import argparse
 import json
-from pathlib import Path
 
 from src.config import load_config
 from src.features.bc_table import FORBIDDEN_PREDICTORS
@@ -53,7 +52,6 @@ def main() -> None:
     args = parser.parse_args()
 
     config = load_config(BC_CONFIG)
-    rf_parameters = config["random_forest"]
     if any(feature in FULL_FEATURES for feature in FORBIDDEN_PREDICTORS):
         raise AssertionError("Forbidden post-fire predictor configured")
 
@@ -77,8 +75,14 @@ def main() -> None:
             "structure_terrain": FULL_FEATURES[7:],
             "full": FULL_FEATURES,
         },
-        "rf": {key: rf_parameters.get(key) for key in
-               ("n_estimators", "max_depth", "min_samples_leaf", "max_features")},
+        # RF hyper-parameters are recorded exactly as used for training below,
+        # so a CLI override cannot desynchronise the saved config from the fit.
+        "rf": {
+            "n_estimators": args.n_estimators,
+            "max_depth": args.max_depth,
+            "min_samples_leaf": args.min_samples_leaf,
+            "max_features": args.max_features,
+        },
         "note": "RF hyperparameters were fixed before inspecting any held-out-fire result.",
     }
     (args.output_dir / "experiment_config.json").write_text(

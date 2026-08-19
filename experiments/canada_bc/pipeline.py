@@ -46,7 +46,7 @@ import rasterio
 
 from src.config import load_config
 from src.data.canlabs import crop_event_window, read_scaled_dnbr
-from src.data.hansen import fetch_layers, forest_mask
+from src.data.hansen import fetch_layers
 from src.data.landsat import prefire_median_composite
 from src.data.nbac import (
     annual_shapefile,

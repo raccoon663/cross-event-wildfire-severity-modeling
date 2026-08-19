@@ -18,7 +18,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import argparse
-from pathlib import Path
 
 from src.config import PROJECT_ROOT
 from src.data.usa_dataset import run_camp_to_carr_transfer
