@@ -31,8 +31,12 @@ env/
 *_token*.json
 
 # --- Experiment scratch (kept out of the repo; results are small CSVs/JSON) ---
+data/raw/
+data/cache/
+outputs/tmp/
 experiments/*/results/data/
 experiments/canada_bc/events/
+logs/
 *.log
 
 # --- OS / editor noise ---

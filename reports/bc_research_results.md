@@ -112,8 +112,9 @@ fires.
   which fires will contain high-dNBR areas — but not enough to be deployed.
 - **The negative R² is the result, not a bug.** It is computed against each
   held-out fire's own mean and quantifies the variance across events that the
-  pre-fire landscape simply does not carry. Publishing it is the point of a
-  graduate portfolio: a measured negative result with a defensible protocol.
+  pre-fire landscape does not carry. The protocol, the assertion checks, and
+  the per-event spread make the negative value reproducible rather than an
+  artefact of a single bad fire.
 
 ## 6. Reproduce
 

@@ -96,15 +96,16 @@ column where the two are essentially tied.
 
 | Method | Macro-F1 | Balanced acc. | High-severity recall |
 |---|---|---|---|
-| Camp-trained RF (untouched) | **0.7976** | 0.8086 | 0.8121 |
-| Frozen Camp dNBR thresholds | 0.7893 | — | — |
-| Carr official thresholds (reference only) | 0.7935 | — | — |
+| Camp-trained RF (untouched) | **0.797554** | **0.795827** | **0.809102** |
+| Frozen Camp dNBR thresholds | 0.789306 | 0.775353 | 0.765114 |
+| Carr official thresholds (reference only) | 0.793454 | — | — |
 
-- RF performance retention vs Camp OOF: 0.7976 / 0.8089 = **0.986**.
+- RF performance retention vs Camp OOF: 0.797554 / 0.808934 = **0.986**.
 - Interpretation: the model loses ~1.4% of its Macro-F1 when the fire changes
   from Camp to Carr. All three numbers sit in a narrow band (0.79-0.80), so the
-  honest claim is not "the RF wins" — it is "the RF transfers essentially
-  undamaged, with no test-event information."
+  claim is not "the RF wins" — it is "the RF transfers essentially
+  undamaged, with no test-event information"; its clearest gains are balanced
+  accuracy and high-severity recall.
 
 ## 6. Reproduce
 
