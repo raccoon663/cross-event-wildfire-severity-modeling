@@ -11,11 +11,11 @@ strict cross-event transfer (Camp → Carr), and prospective pre-fire prediction
 
 | Experiment | Model | Macro-F1 | Balanced acc. |
 |---|---|---|---|
-| Camp internal CV, 30 m | Random Forest (5 km-block OOF) | 0.808934 | 0.822493 |
-| Camp internal CV, 30 m | Official MTBS dNBR thresholds | 0.816192 | 0.819781 |
-| Camp → Carr (untouched) | Camp-trained Random Forest | **0.797554** | **0.795827** |
-| Camp → Carr (untouched) | Camp-frozen dNBR thresholds | 0.789306 | 0.775353 |
-| Camp → Carr (reference only) | Carr official dNBR thresholds | 0.793454 | — |
+| Camp internal CV, 30 m | Random Forest (5 km-block OOF) | 0.809 | 0.822 |
+| Camp internal CV, 30 m | Official MTBS dNBR thresholds | 0.816 | 0.820 |
+| Camp → Carr (untouched) | Camp-trained Random Forest | **0.798** | **0.796** |
+| Camp → Carr (untouched) | Camp-frozen dNBR thresholds | 0.789 | 0.775 |
+| Camp → Carr (reference only) | Carr official dNBR thresholds | 0.793 | — |
 
 - Inside Camp Fire at 30 m, the official dNBR rule scores **above** the Random
   Forest (0.816 vs 0.809); at 90 m they converge (0.752 vs 0.750). dNBR
@@ -69,9 +69,9 @@ same constraint: dNBR thresholds frozen from Camp's own MTBS event
 
 | Method (all external except reference) | Macro-F1 | Balanced acc. | High-sev. recall |
 |---|---|---|---|
-| Camp-trained RF | **0.797554** | **0.795827** | **0.809102** |
-| Camp-frozen dNBR | 0.789306 | 0.775353 | 0.765114 |
-| Carr official thresholds (reference) | 0.793454 | — | — |
+| Camp-trained RF | **0.798** | **0.796** | **0.809** |
+| Camp-frozen dNBR | 0.789 | 0.775 | 0.765 |
+| Carr official thresholds (reference) | 0.793 | — | — |
 
 Performance retention vs Camp OOF: 0.986. All methods sit in a narrow band; the
 Random Forest's clearest advantage is balanced accuracy and high-severity recall.
